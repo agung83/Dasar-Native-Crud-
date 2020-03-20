@@ -14,7 +14,7 @@
         <h2 class="text-center bg-info">Dasar Crud</h2>
         <h3 class="text-center">Edit Data</h3>
         <a href="databarang.php" class="btn btn-success mb-3">Kembali</a>
-        
+
         <?php 
             $edit = $_GET['idedit'];
             
@@ -28,17 +28,17 @@
         <form action="" method="POST">
                 <div class="form-group">
                     <label>Nama Barang</label>
-                    <input type="text" class="form-control" value="<?php echo $pecah['barang_nama']; ?>">
+                    <input type="text" name="nama" class="form-control" value="<?php echo $pecah['barang_nama']; ?>">
                 </div>
 
                 <div class="form-group">
                     <label>Stok Barang</label>
-                    <input type="text" class="form-control" value=" <?php echo $pecah['barang_stok']; ?>">
+                    <input type="text" name="stok" class="form-control" value=" <?php echo $pecah['barang_stok']; ?>">
                 </div>
 
                 <div class="form-group">
                     <label>Harga Barang</label>
-                    <input type="number" class="form-control" value="<?php echo $pecah['barang_harga']; ?>" >
+                    <input type="number" name="harga" class="form-control" value="<?php echo $pecah['barang_harga']; ?>" >
                 </div>
 
                 <div class="form-group">
@@ -71,9 +71,56 @@
                     <input type="number" name="panjang" class="form-control" value="<?php echo $pecah['barang_panjang']; ?>" >
                 </div>
 
-                <button  name="edit" type="submit" class="btn btn-danger">Edit</button>
+                <button  name="edit"  class="btn btn-danger">Edit</button>
 
         </form>
+
+        <?php 
+        if (isset($_POST['edit'])) {
+            
+            $txt_nama     =  $_POST['nama'];
+            $txt_stok     =  $_POST['stok'];
+            $txt_harga    =  $_POST['harga'];
+            $txt_jenis    =  $_POST['jenis'];
+            $txt_tglmasuk =  $_POST['tglmasuk'];
+            $txt_supplier =  $_POST['supplier'];
+            $txt_gambar   =  $_POST['gambar'];
+            $txt_berat    =  $_POST['berat'];
+            $txt_panjang  =  $_POST['panjang'];
+
+
+            $koneksi->query("UPDATE tb_barang SET   `barang_nama`     = '$txt_nama',
+                                                    `barang_stok`     = '$txt_stok',
+                                                    `barang_harga`    = '$txt_harga',
+                                                    `barang_jenis`    = '$txt_jenis',
+                                                    `barang_tglmasuk` = '$txt_tglmasuk',
+                                                    `barang_berat`    = '$txt_berat',
+                                                    `barang_panjang`  = '$txt_panjang'
+                                                    ,`supplier`       = '$txt_supplier',
+                                                    `barang_gambar`   = '$txt_gambar'
+                                                    WHERE
+                                                    barang_id = '$edit'
+                                                    ");
+                echo "
+                <script>
+                alert('data telah terubah');
+                window.location='databarang.php';
+                
+                
+                
+                </script>";                                      
+
+
+
+
+
+
+
+
+
+        }
+
+        ?>
 
 
 
