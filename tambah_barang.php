@@ -19,7 +19,7 @@ include 'conn.php';
 
 
 <div class="container bg-light shadow-lg mt-2  pt-4 pb-4 pl-4 pr-4">
-<h1 class="text-center bg-info" style=" height: 80px;"><span class="text-white font-italic font-weight-bold">Input Data</span></h1>
+<h1 class="text-center bg-info" style=" height: 80px;"><span class=" font-italic font-weight-bold">Input Data</span></h1>
 <a href="databarang.php" class="btn btn-primary mb-5">Kembali</a>
 
 

@@ -20,9 +20,9 @@ include 'conn.php';
 
 
 <div class="container bg-light shadow-lg mt-5  pt-4 pb-4 pl-4 pr-4 rounded">
-<h1 class="text-center bg-info rounded" style=" height: 80px;"><span class="text-white font-italic font-weight-bold">Table Barang CV. Maju Jaya</span></h1>
+<h1 class="text-center bg-info rounded" style=" height: 80px;"><span class=" font-italic font-weight-bold">Table Barang CV. Maju Jaya</span></h1>
 
-  <table class="table table-bordered">
+  <table class="table table-striped">
     <thead>
         <tr class="bg-secondary">
         <th>Nomor</th>

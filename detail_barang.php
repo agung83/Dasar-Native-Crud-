@@ -39,7 +39,7 @@ include 'conn.php';
 
 <div class="col-md-7 mt-5">
 
-<table class="table table-dark">
+<table class="table table-striped">
      <thead>
             <tr>
             <th>id barang</th>
