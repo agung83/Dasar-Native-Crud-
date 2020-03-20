@@ -51,6 +51,16 @@ include 'conn.php';
     </div>
 
     <div class="form-group">
+    <label for="exampleInputEmail1">supplier</label>
+    <input type="text" name="supplier" class="form-control" >
+    </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Gambar Format .jpg</label>
+    <input type="text" name="gambar" class="form-control" placeholder="contoh : agung.jpg  <----- harus buat titik jpg nya" >
+    </div>
+
+    <div class="form-group">
     <label for="exampleInputPassword1">Berat Barang</label>
     <input type="number" name="berat" class="form-control">
     </div>
@@ -73,6 +83,8 @@ if (isset($_POST['save'])) {
     $txt_harga     = $_POST['harga'];
     $txt_jenis     = $_POST['jenis'];
     $txt_tglmasuk  = $_POST['tglmasuk'];
+    $txt_supplier  = $_POST['supplier'];
+    $txt_gambar  = $_POST['gambar'];
     $txt_berat     = $_POST['berat'];
     $txt_panjang   = $_POST['panjang'];
 
@@ -100,23 +112,29 @@ if (isset($_POST['save'])) {
                                                 barang_harga,
                                                 barang_jenis,
                                                 barang_tglmasuk,
+                                                supplier,
+                                                barang_gambar,
                                                 barang_berat,
-                                                barang_panjang) 
+                                                barang_panjang)
+                                                 
                                                 VALUES (
                                                 '$txt_nama',
                                                 '$txt_stok',
                                                 '$txt_harga',
                                                 '$txt_jenis',
                                                 '$txt_tglmasuk',
+                                                '$txt_supplier',
+                                                '$txt_gambar',
                                                 '$txt_berat',
-                                                '$txt_panjang')");
+                                                '$txt_panjang' )");
+                                               
 
 
 echo "
 <script>
 
 alert('data tersimpan mas bro')
-window.location='resonsivetable.php'
+window.location='databarang.php'
 
 </script>";
 

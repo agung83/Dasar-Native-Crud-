@@ -19,21 +19,19 @@ include 'conn.php';
 <body>
 
 
-<div class="container bg-light shadow-lg mt-5  pt-4 pb-4 pl-4 pr-4">
-<h1 class="text-center bg-info" style=" height: 80px;"><span class="text-white font-italic font-weight-bold">Table Barang CV. Maju Jaya</span></h1>
+<div class="container bg-light shadow-lg mt-5  pt-4 pb-4 pl-4 pr-4 rounded">
+<h1 class="text-center bg-info rounded" style=" height: 80px;"><span class="text-white font-italic font-weight-bold">Table Barang CV. Maju Jaya</span></h1>
 
   <table class="table table-bordered">
     <thead>
         <tr class="bg-secondary">
         <th>Nomor</th>
-        <th>Id Barang</th>
+        <!--<th>Id Barang</th>-->
         <th>Nama Barang</th>
         <th>Stok Barang</th>
         <th>Harga Barang</th>
         <th>Jenis Barang</th>
         <th>Tanggal Masuk</th>
-        <th>Berat Barang</th>
-        <th>Panjang Barang</th>
         <th>Aksi</th>
         </tr>
     </thead>
@@ -44,18 +42,18 @@ include 'conn.php';
  ?>
        <tr class="bg-dark">
             <td class="bg-secondary"><?php echo $nomor; ?></td>
-            <td class="bg-warning"><?php echo $pecah['barang_id'] ?></td>
+            <!--<td class="bg-warning"><?php //echo $pecah['barang_id'] ?></td>-->
             <td class="bg-primary"><?php echo $pecah['barang_nama'] ?></td>
             <td class="bg-success"><?php echo $pecah['barang_stok'] ?></td>
             <td class="bg-info"><?php echo $pecah['barang_harga'] ?></td>
             <td class="bg-danger"><?php echo $pecah['barang_jenis'] ?></td>
             <td class="bg-info"><?php echo $pecah['barang_tglmasuk'] ?></td>
-            <td class="bg-warning"><?php echo $pecah['barang_berat'] ?>   Kg</td>
-            <td class="bg-primary"><?php echo $pecah['barang_panjang'] ?> Cm</td>
+           <!-- <td class="bg-warning"><?php //echo $pecah['barang_berat'] ?>   Kg</td>-->
+           <!-- <td class="bg-primary"><?php // echo $pecah['barang_panjang'] ?> Cm</td>-->
             <td> 
-              <a href="" style="width: 69px;" class="btn btn-warning mb-1">Edit</a>
-              <a href="" class="btn btn-danger">Hapus</a>
-              <a href="" class="btn btn-success">Detail</a>
+              <a href=""  class="btn btn-warning ">Edit</a>
+              <a href="hapus.php?idhapus=<?php echo $pecah['barang_id']; ?>" class="btn btn-danger">Hapus</a>
+              <a href="detail_barang.php?iddetail=<?php echo $pecah['barang_id'];  ?> " class="btn btn-success">Detail</a>
             </td>
             
        </tr>
